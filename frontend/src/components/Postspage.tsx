@@ -12,10 +12,10 @@ const PostsPage: React.FC = () => {
 
     const queryClient = useQueryClient();
     const [id, setId] = useState<number | null>(null);
-    const [newTitle, setNewTitle] = React.useState<string>("");
-    const [newContent, setNewContent] = React.useState<string>("");
-    const [updatedTitle, setUpdatedTitle] = React.useState<string>("");
-    const [updatedContent, setUpdatedContent] = React.useState<string>("");
+    const [newTitle, setNewTitle] = useState<string>("");
+    const [newContent, setNewContent] = useState<string>("");
+    const [updatedTitle, setUpdatedTitle] = useState<string>("");
+    const [updatedContent, setUpdatedContent] = useState<string>("");
 
     const { status, data, error } = useQuery<Post[]>({
         queryKey: ["posts"],
