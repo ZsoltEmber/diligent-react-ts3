@@ -108,8 +108,7 @@ app.delete('/users/:id', (req: Request, res: Response) => {
 app.delete('/posts/:id', (req: Request, res: Response) => {
   const postId = parseInt(req.params.id);
   const postIndex = posts.findIndex(post => post.id === postId);
-
-  users.splice(postIndex, 1);
+  posts.splice(postIndex, 1);
 
   res.sendStatus(204);   
 
