@@ -7,7 +7,7 @@ interface Post {
     content: string;
 }
 
-const Postspage: React.FC = () => {
+const PostsPage: React.FC = () => {
 
 
     const queryClient = useQueryClient();
@@ -116,4 +116,4 @@ const Postspage: React.FC = () => {
     );
 };
 
-export default Postspage;
+export default PostsPage;

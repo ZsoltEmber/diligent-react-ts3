@@ -7,7 +7,7 @@ interface User {
   email: string;
 }
 
-const Userspage: React.FC = () => {
+const UsersPage: React.FC = () => {
   const queryClient = useQueryClient();
   const [name, setName] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
@@ -73,4 +73,4 @@ const Userspage: React.FC = () => {
   );
 };
 
-export default Userspage;
+export default UsersPage;

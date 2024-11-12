@@ -1,14 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./components/Homepage";
-import Userspage from "./components/Userspage";
-import Postspage from "./components/Postspage";
+import HomePage from "./components/HomePage";
+import UsersPage from "./components/UsersPage";
+import PostsPage from "./components/PostsPage";
+
+
+
 
 const App: React.FC = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="userspage" element={<Userspage />} />
-      <Route path="postspage" element={<Postspage />} />      
+      <Route path="/" element={<HomePage />} />
+      <Route path="userspage" element={<UsersPage />} />
+      <Route path="postspage" element={<PostsPage />} />      
     </Routes>
   </BrowserRouter>
 );
