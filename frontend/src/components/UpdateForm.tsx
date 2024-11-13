@@ -33,6 +33,7 @@ const UpdateForm: React.FC<UpdateFormProps> = ({ updateMutation, element, setId 
         <>
             {Object.keys(element as User | Post).map((key) => {
                 const value = (element as any)[key];
+                if(key != "id"){
                 return (
                     <form key={key}
                         onSubmit={(event) => handleSubmit(event)}>
@@ -44,7 +45,7 @@ const UpdateForm: React.FC<UpdateFormProps> = ({ updateMutation, element, setId 
                             onChange={(e) => handleChange(key, e.target.value)}
                         />
                     </form>
-                );
+                );}
             })}
             <button onClick={(event) => handleSubmit(event)} type="submit">Submit</button>
         </>
