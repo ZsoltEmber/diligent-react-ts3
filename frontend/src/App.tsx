@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import UsersPage from "./components/UsersPage";
-import PostsPage from "./components/PostsPage";
+import HomePage from "./pages/Homepage";
+import UsersPage from "./pages/Userspage";
+import PostsPage from "./pages/Postspage";
 
 
 
@@ -11,7 +11,7 @@ const App: React.FC = () => (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="userspage" element={<UsersPage />} />
-      <Route path="postspage" element={<PostsPage />} />      
+      <Route path="postspage" element={<PostsPage />} />
     </Routes>
   </BrowserRouter>
 );

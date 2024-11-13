@@ -7,13 +7,13 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-interface User {
+export interface User {
   id: number;
   name: string;
   email: string;
 }
 
-interface Post {
+export interface Post {
   id: number;
   title: string;
   content: string;
