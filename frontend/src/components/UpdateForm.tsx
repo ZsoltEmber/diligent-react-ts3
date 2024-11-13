@@ -11,8 +11,6 @@ interface UpdateFormProps {
     setId: Function;
 }
 
-
-
 const UpdateForm: React.FC<UpdateFormProps> = ({ updateMutation, element, setId }) => {
     const [updatedElement, setUpdatedElement] = useState<Partial<User> | Partial<Post>>(element)
 

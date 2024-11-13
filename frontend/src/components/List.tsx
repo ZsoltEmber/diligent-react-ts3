@@ -20,34 +20,32 @@ const List: React.FC<ListProps<User | Post>> = ({ list, deleteMutation, updateMu
     return (
         <>
             <ul>
-                {list?.map((e) => {
-                    if ("name" in e) {
-                        return (
-                            <li key={e.id}>
-                                <p>{e.name}</p>
-                                <p>{e.email}</p>
-                                <button onClick={() => deleteMutation.mutate(e.id)}>delete</button>
-                                <button onClick={() => { setId(e.id) }}>update</button>
-                                {id ? <UpdateForm element={e} updateMutation={updateMutation} setId={setId} /> : <></>}
-                            </li>
-                        );
-                    }
-                    if ("title" in e) {
-                        return (
-                            <li key={e.id}>
-                                <p>{e.title}</p>
-                                <p>{e.content}</p>
-                                <button onClick={() => deleteMutation.mutate(e.id)}>delete</button>
-                                <button onClick={() => { setId(e.id) }}>update</button>
-                                {id ? <UpdateForm element={e} updateMutation={updateMutation} setId={setId} /> : <></>}
-                            </li>
-                        )
-                    }
+                {list?.map((element) => {
+                    return (
+                        <li key={element.id}>
+                            {Object.keys(element).map((key) => {
+                                const value = (element as any)[key as keyof typeof element];
+                                return (
+                                    <p key={key}>
+                                        {value}
+                                    </p>
+                                );
+                            })}
+                            <button onClick={() => deleteMutation.mutate(element.id)}>Delete</button>
+                            <button onClick={() => setId(element.id)}>Update</button>
+                            {id === element.id && (
+                                <UpdateForm element={element} updateMutation={updateMutation} setId={setId} />
+                            )}
+                        </li>
+                    );
                 })}
             </ul>
         </>
+
     )
 }
+
+
 
 
 export default List;
